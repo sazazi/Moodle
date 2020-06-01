@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayActivitiesSelectionActivity">
+
+    <ImageView
+        android:id="@+id/selectedMoodImg"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/mood_selected"
+        app:layout_constraintBottom_toTopOf="@+id/dailyActivitiesQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72" />
+
+    <TextView
+        android:id="@+id/dailyActivitiesQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/daily_activities_question"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.211" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dailyActivitiesQuestion"
+        app:layout_constraintVertical_bias="0.152">
+
+        <TableRow
+            android:id="@+id/activitiesTable_row1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_travel"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_travel"
+                    android:onClick="selectActivity"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_travel"
+                    app:srcCompat="@drawable/travel" />
+
+                <TextView
+                    android:id="@+id/activityTxt_travel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_travel" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_work"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_work"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_work"
+                    app:srcCompat="@drawable/work" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_work" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_family"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_family"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_family"
+                    app:srcCompat="@drawable/family" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_family" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_friends"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_friends"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_friends"
+                    app:srcCompat="@drawable/friends" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_friends" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_date"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_date"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_date"
+                    app:srcCompat="@drawable/date" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_date" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/activitiesTable_row2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_sport"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_sport"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_sport"
+                    app:srcCompat="@drawable/sport" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_sport" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_party"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_party"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_party"
+                    app:srcCompat="@drawable/party" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_party" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_tv"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_tv"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_tv"
+                    app:srcCompat="@drawable/tv" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_tv" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_reading"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_reading"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_reading"
+                    app:srcCompat="@drawable/reading" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_reading" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_gaming"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_gaming"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_gaming"
+                    app:srcCompat="@drawable/gaming" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_gaming" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/activitiesTable_row3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_shopping"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_shopping"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_shopping"
+                    app:srcCompat="@drawable/shopping" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_shopping" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_meal"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_meal"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_meal"
+                    app:srcCompat="@drawable/meal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_meal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_cooking"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_cooking"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_cooking"
+                    app:srcCompat="@drawable/cooking" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_cooking" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_cleaning"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_cleaning"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_cleaning"
+                    app:srcCompat="@drawable/cleaning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_cleaning" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_studying"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_studying"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_studying"
+                    app:srcCompat="@drawable/studying" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_studying" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/activitiesTable_row4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="start">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_relax"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_relax"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_relax"
+                    app:srcCompat="@drawable/relax" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_relax" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_gym"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_gym"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_gym"
+                    app:srcCompat="@drawable/gym" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_gym" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_sick"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_sick"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_sick"
+                    app:srcCompat="@drawable/sick" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_sick" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/activityBtn_other"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/activity_btn_background"
+                    android:contentDescription="@string/activity_label_other"
+                    android:onClick="selectActivity"
+                    android:padding="5dp"
+                    android:scaleType="centerInside"
+                    android:tag="@string/activity_label_other"
+                    app:srcCompat="@drawable/other" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:text="@string/activity_label_other" />
+            </LinearLayout>
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/nextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="next"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
